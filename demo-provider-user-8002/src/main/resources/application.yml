@@ -1,0 +1,35 @@
+server:
+  port: 8002
+
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost/demoDb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+#     username: java
+#     password: Javaxsy1.
+#     url: jdbc:mysql://192.168.0.20:3306/ms?useUnicode=true&characterEncoding=UTF-8&useSSL=false    
+  application:
+    #name: provider${server.port}
+    name: providerSayhello 
+#mybits配置
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml 
+  
+#Pagerhelper插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql      
+#eureka配置，注册为服务提供者  
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:7001/eureka #中心的地址
+    instance:
+    instance-id: demo8002
+    prefer-ip-address: true     #访问路径可以显示IP地址
+      
+  
+  

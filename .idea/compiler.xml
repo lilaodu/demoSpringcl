@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo-eureka" />
+        <module name="demo-user-ribbon" />
+        <module name="demo-api" />
+        <module name="thrcloud-provider-user-8001" />
+        <module name="demo-provider-user-8002" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo-api" target="1.8" />
+      <module name="demo-eureka" target="1.8" />
+      <module name="demo-provider-user-8002" target="1.8" />
+      <module name="demo-user-ribbon" target="1.8" />
+      <module name="thrcloud" target="1.8" />
+      <module name="thrcloud-provider-user-8001" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

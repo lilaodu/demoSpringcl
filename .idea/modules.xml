@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo-api/demo-api.iml" filepath="$PROJECT_DIR$/demo-api/demo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-eureka/demo-eureka.iml" filepath="$PROJECT_DIR$/demo-eureka/demo-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-provider-user-8002/demo-provider-user-8002.iml" filepath="$PROJECT_DIR$/demo-provider-user-8002/demo-provider-user-8002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-user-ribbon/demo-user-ribbon.iml" filepath="$PROJECT_DIR$/demo-user-ribbon/demo-user-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thrcloud.iml" filepath="$PROJECT_DIR$/thrcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thrcloud-provider-user-8001/thrcloud-provider-user-8001.iml" filepath="$PROJECT_DIR$/thrcloud-provider-user-8001/thrcloud-provider-user-8001.iml" />
+    </modules>
+  </component>
+</project>
