@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo-eureka" />
-        <module name="demo-user-ribbon" />
         <module name="demo-api" />
-        <module name="thrcloud-provider-user-8001" />
+        <module name="webapi-8001" />
+        <module name="demo-user-ribbon" />
         <module name="demo-provider-user-8002" />
       </profile>
     </annotationProcessing>
@@ -19,7 +19,7 @@
       <module name="demo-provider-user-8002" target="1.8" />
       <module name="demo-user-ribbon" target="1.8" />
       <module name="thrcloud" target="1.8" />
-      <module name="thrcloud-provider-user-8001" target="1.8" />
+      <module name="webapi-8001" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
