@@ -68,7 +68,7 @@
 
     <modules>
     	<module>demo-api</module>
-    	<module>thrcloud-provider-user-8001</module>
+    	<module>webapi-8001</module>
     	<module>demo-eureka</module>
     	<module>demo-user-ribbon</module>
     	<module>demo-provider-user-8002</module>
