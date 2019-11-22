@@ -2,21 +2,23 @@ package com.g.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.entity.DataReturn;
+import com.entity.Store;
+import com.entity.StoreExample;
+import com.g.dao.StoreMapper;
 import com.utils.MD5Util;
 import jodd.http.HttpRequest;
 import jodd.http.HttpResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 @RestController
@@ -25,6 +27,40 @@ public class CommenController {
     @Value("${webapi.client_secret_pd}")
    private   String client_secret_pd;
 
+    @Autowired
+    private StoreMapper storeMapper;
+
+    @RequestMapping("pullStore")
+    @ResponseBody
+    public  String pullStore ()throws  UnsupportedEncodingException{
+        Map<String,Object> map = new HashMap<>();
+        String url = "http://pd.lion-mall.com/?r=/index/api-store";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.putAll(map);
+        logger.info("拉取店铺信息入参--------"+jsonObject.toString());
+        HttpResponse response = HttpRequest.post(url).body(jsonObject.toString()).charset("utf-8")
+                //.contentType("application/x-www-form-urlencoded").connectionTimeout(2000)
+                .contentType("application/json").connectionTimeout(2000)
+                .timeout(5000).send();
+        String result = new String(response.bodyBytes(), "utf-8");
+        logger.info("出参--------"+result);
+
+        if(result!=""){
+            JSONObject js = JSONObject.parseObject(result);
+            List<Store> dataList = (List<Store>)js.get("data");
+
+            //从库中取出所有store
+            List<Store> stores = new ArrayList<>();
+            StoreExample storeExample = new StoreExample();
+            stores =storeMapper.selectByExample(storeExample);
+
+
+        }
+
+
+        return result;
+
+    }
 
     @RequestMapping("placeOrder")
     @ResponseBody
